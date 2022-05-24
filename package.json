@@ -1,0 +1,26 @@
+{
+  "name": "projekt-restauracja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KacperPuzi0/Projekt-Restauracja.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KacperPuzi0/Projekt-Restauracja/issues"
+  },
+  "homepage": "https://github.com/KacperPuzi0/Projekt-Restauracja#readme",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.35",
+    "mongodb": "^4.6.0",
+    "typescript": "^4.6.4"
+  }
+}
