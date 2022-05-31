@@ -34,4 +34,30 @@ export async function connectToDatabase() {
 	collections.Zamowienie = ZamowienieCollection;
 
 	console.log(`Connected to database: RestauracjaDB`);
+
+	await db.command({
+            "collMod": "Danie",
+            "validator": {
+                $jsonSchema: {
+                    bsonType: "object",
+                    required: ["nazwa", "cena", "kategoria"],
+                    additionalProperties: false,
+                    properties: {
+                    _id: {},
+                    nazwa: {
+                        bsonType: "string",
+                        description: "'nazwa' musi być stringiem"
+                    },
+                    cena: {
+                        bsonType: "number",
+                        description: "'cena' musi być liczbą"
+                    },
+                    kategoria: {
+                        bsonType: "string",
+                        description: "'kategoria' musi być stringiem"
+                    }
+                    }
+                }
+             }
+        });
 }
