@@ -8,10 +8,10 @@ enum status {
   rachunek = "rachunek",
 }
 
-export class Zamowienie {
+export default class Zamowienie {
   constructor(
     public _id: ObjectId,
-    public pozycje: Danie,
+    public pozycje: Danie[],
     public status: status,
     public stolik: Stolik,
     public kwota: number

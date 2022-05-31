@@ -6,6 +6,6 @@ export default class Produkt {
     public cena: number,
     public ilosc: number,
     public jednostkaMiary: number,
-    public _id: ObjectId
+    public _id?: ObjectId
   ) {}
 }
