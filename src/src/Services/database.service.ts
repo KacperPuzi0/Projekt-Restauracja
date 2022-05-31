@@ -14,16 +14,16 @@ export const collections: {
 export async function connectToDatabase() {
 	dotenv.config();
 
-	const client: mongoDB.MongoClient = new mongoDB.MongoClient(process.env.DB_CONN_STRING);
+	const client: mongoDB.MongoClient = new mongoDB.MongoClient("mongodb+srv://Admin:12345@restauracjadb.lxldi.mongodb.net/?retryWrites=true&w=majority");
 	await client.connect();
-	const db: mongoDB.Db = client.db(process.env.DB_NAME);
-	const DanieCollection: mongoDB.Collection = db.collection(process.env.DANIE_COLLECTION);
-	const PracownikCollection: mongoDB.Collection = db.collection(process.env.PRACOWNIK_COLLECTION);
-	const ProduktCollection: mongoDB.Collection = db.collection(process.env.PRODUKT_COLLECTION);
-	const RestauracjaCollection: mongoDB.Collection = db.collection(process.env.RESTAURACJA_COLLECTION);
-	const RezerwacjaCollection: mongoDB.Collection = db.collection(process.env.REZERWACJA_COLLECTION);
-	const StolikCollection: mongoDB.Collection = db.collection(process.env.STOLIK_COLLECTION);
-	const ZamowienieCollection: mongoDB.Collection = db.collection(process.env.ZAMOWIENIE_COLLECTION);
+	const db: mongoDB.Db = client.db("RestauracjaDB");
+	const DanieCollection: mongoDB.Collection = db.collection("Danie");
+	const PracownikCollection: mongoDB.Collection = db.collection("Pracownik");
+	const ProduktCollection: mongoDB.Collection = db.collection("Produkt");
+	const RestauracjaCollection: mongoDB.Collection = db.collection("Restauracja");
+	const RezerwacjaCollection: mongoDB.Collection = db.collection("Rezerwacja");
+	const StolikCollection: mongoDB.Collection = db.collection("Stolik");
+	const ZamowienieCollection: mongoDB.Collection = db.collection("Zamowienie");
 
 	collections.Danie = DanieCollection;
 	collections.Pracownik = PracownikCollection;
@@ -33,5 +33,5 @@ export async function connectToDatabase() {
 	collections.Stolik = StolikCollection;
 	collections.Zamowienie = ZamowienieCollection;
 
-	console.log(`Connected to database: ${process.env.DB_NAME}`);
+	console.log(`Connected to database: RestauracjaDB`);
 }

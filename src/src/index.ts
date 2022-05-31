@@ -1,6 +1,6 @@
 import express from "express";
 import { connectToDatabase } from "./services/database.service";
-import { danieRouter} from "./routes/danie.router";
+import {danieRouter} from "./routes/danie.router";
 
 const app = express();
 app.use(express.json());
